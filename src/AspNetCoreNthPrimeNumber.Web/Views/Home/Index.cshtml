@@ -1,0 +1,20 @@
+﻿
+@model HomeModel
+
+<h1>Nth Prime Calculator</h1>
+
+<form asp-controller="Home" asp-action="Index" method="get">
+    <div>
+        <label asp-for="Nth"></label>
+        <input asp-for="Nth" />
+    </div>
+    <div>
+        <input type="submit" value="Calculate" />
+    </div>
+</form>
+
+@if (Model.NthPrime.HasValue)
+{
+    <hr />
+    <div>Nth Prime: @String.Format("{0:0,0}", Model.NthPrime.Value)</div>
+}

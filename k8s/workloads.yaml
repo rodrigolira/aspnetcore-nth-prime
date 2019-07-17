@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nthprime
+spec:
+  selector:
+    matchLabels:
+      app: nthprime
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nthprime
+    spec:
+      containers:
+        - name: nthprime
+          image: rodrigolira/aspnetcore-nth-prime:1.0
+          resources:
+            requests:
+              cpu: 100m
